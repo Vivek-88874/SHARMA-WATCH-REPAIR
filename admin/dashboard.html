@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Admin Dashboard | Sharma Watch Repair</title>
 
     <link rel="stylesheet"
@@ -26,8 +26,7 @@
         </a>
 
         <button type="button" id="logoutButton" class="logout-button">
-            <i class="bi bi-box-arrow-right"></i>
-            Logout
+            <i class="bi bi-box-arrow-right"></i> Logout
         </button>
     </header>
 
@@ -35,29 +34,26 @@
         <section class="dashboard-welcome">
             <p class="welcome-label">ADMIN PANEL</p>
             <h1>Welcome to Dashboard</h1>
-            <p>
-                Manage your watch repair website from one place.
-            </p>
+            <p>Manage your watch repair website from one place.</p>
         </section>
 
         <section class="dashboard-grid" aria-label="Admin options">
-
-            <article class="dashboard-card">
+            <a href="#galleryManager" class="dashboard-card gallery-card">
                 <div class="dashboard-card-icon icon-blue">
                     <i class="bi bi-images"></i>
                 </div>
                 <h2>Manage Gallery</h2>
-                <p>View and organize your watch gallery.</p>
-                <span class="card-status">Demo section</span>
-            </article>
+                <p>Upload and organize your watch images.</p>
+                <span class="card-status">Open Gallery</span>
+            </a>
 
             <article class="dashboard-card">
                 <div class="dashboard-card-icon icon-gold">
                     <i class="bi bi-tools"></i>
                 </div>
                 <h2>Repair Services</h2>
-                <p>Review the services displayed on your website.</p>
-                <span class="card-status">Demo section</span>
+                <p>Repair service management can be added later.</p>
+                <span class="card-status">Coming Soon</span>
             </article>
 
             <article class="dashboard-card">
@@ -65,8 +61,8 @@
                     <i class="bi bi-telephone"></i>
                 </div>
                 <h2>Contact Details</h2>
-                <p>Review your website contact information.</p>
-                <span class="card-status">Demo section</span>
+                <p>Contact management can be added later.</p>
+                <span class="card-status">Coming Soon</span>
             </article>
 
             <article class="dashboard-card">
@@ -74,18 +70,82 @@
                     <i class="bi bi-gear"></i>
                 </div>
                 <h2>Website Settings</h2>
-                <p>Plan changes to your website settings.</p>
-                <span class="card-status">Demo section</span>
+                <p>More website settings can be added later.</p>
+                <span class="card-status">Coming Soon</span>
             </article>
+        </section>
 
+        <section class="gallery-manager" id="galleryManager">
+            <div class="gallery-heading">
+                <div>
+                    <p class="welcome-label">WATCH COLLECTION</p>
+                    <h2>Gallery Management</h2>
+                    <p>Upload watch photos to your Cloudinary account.</p>
+                </div>
+            </div>
+
+            <form id="galleryForm" class="gallery-form">
+                <div class="form-group">
+                    <label for="watchName">Watch Name</label>
+                    <input
+                        type="text"
+                        id="watchName"
+                        placeholder="e.g. Titan Analog Watch"
+                        maxlength="80"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="watchCategory">Watch Category</label>
+                    <select id="watchCategory" required>
+                        <option value="">Select category</option>
+                        <option value="Timex">Timex</option>
+                        <option value="Titan">Titan</option>
+                        <option value="Sonata">Sonata</option>
+                        <option value="Wall Watches">Wall Watches</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="watchImage">Select Watch Image</label>
+                    <input
+                        type="file"
+                        id="watchImage"
+                        accept="image/jpeg,image/png,image/webp"
+                        required>
+                    <small>JPG, PNG or WEBP. Maximum 5 MB.</small>
+                </div>
+
+                <div class="image-preview" id="imagePreview">
+                    <i class="bi bi-image"></i>
+                    <span>Image preview will appear here</span>
+                </div>
+
+                <button type="submit" class="upload-button" id="uploadButton">
+                    <i class="bi bi-cloud-arrow-up"></i>
+                    Upload Watch Image
+                </button>
+
+                <p id="galleryMessage" class="gallery-message"
+                   role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="gallery-list-heading">
+                <h3>Uploaded in This Browser</h3>
+                <p>Images uploaded through this page will appear below.</p>
+            </div>
+
+            <div id="galleryList" class="gallery-list"></div>
         </section>
 
         <div class="demo-notice">
             <i class="bi bi-info-circle"></i>
             <p>
-                <strong>Demo Dashboard:</strong>
-                These cards are currently for display only.
-                Gallery updates and other management features are not connected yet.
+                <strong>Important:</strong>
+                Images upload to Cloudinary. This first version keeps the
+                gallery list in this browser only. A shared database is
+                needed to keep the same gallery across devices and visitors.
+                Removing an item here does not delete its Cloudinary asset.
             </p>
         </div>
     </main>
