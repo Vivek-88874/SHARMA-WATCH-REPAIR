@@ -1,0 +1,369 @@
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+    position: relative;
+    min-height: 650px;
+    padding: 75px 0;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(212, 154, 42, 0.13),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #07111e 0%,
+            #102a43 55%,
+            #070b11 100%
+        );
+}
+
+/* Subtle gold line */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        #d49a2a,
+        #f8d477,
+        transparent
+    );
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.hero-content {
+    max-width: 590px;
+    padding: 15px 0;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 20px;
+    margin-bottom: 25px;
+
+    color: #ffffff;
+    border: 1px solid #d49a2a;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.04);
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.hero-tag i {
+    color: #f5bd45;
+    font-size: 20px;
+}
+
+/* Heading */
+
+.hero-content h1 {
+    color: #ffffff;
+    font-size: clamp(38px, 4vw, 58px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+}
+
+.hero-content h1 span {
+    display: block;
+    margin-top: 8px;
+    color: #f5bd45;
+}
+
+/* Description */
+
+.hero-description {
+    max-width: 510px;
+    color: #c7d0dc;
+    font-size: 17px;
+    line-height: 1.85;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+.hero-btn-primary,
+.hero-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 15px 21px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.hero-btn-primary {
+    color: #10243b;
+    background: linear-gradient(
+        135deg,
+        #f8d477,
+        #d49a2a
+    );
+    box-shadow: 0 8px 25px rgba(212, 154, 42, 0.16);
+}
+
+.hero-btn-primary:hover {
+    color: #10243b;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(212, 154, 42, 0.3);
+}
+
+.hero-btn-outline {
+    color: #ffffff;
+    border: 1px solid #d49a2a;
+    background: transparent;
+}
+
+.hero-btn-outline:hover {
+    color: #07111e;
+    background: #f5bd45;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   TRUST FEATURES
+========================= */
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d49a2a;
+    border-radius: 50%;
+    color: #f5bd45;
+    font-size: 25px;
+}
+
+.hero-feature h6 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.hero-feature p {
+    color: #aebdce;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* =========================
+   RIGHT WATCH IMAGE
+========================= */
+
+.hero-watch-wrapper {
+    position: relative;
+    max-width: 570px;
+    margin-left: auto;
+    text-align: center;
+}
+
+.watch-glow {
+    position: absolute;
+    width: 75%;
+    height: 70%;
+    top: 15%;
+    left: 12%;
+
+    background: rgba(212, 154, 42, 0.13);
+    filter: blur(65px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-watch-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 490px;
+    object-fit: contain;
+
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+    animation: watchFloat 5s ease-in-out infinite;
+}
+
+.watch-image-caption {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 15px;
+    padding: 12px 22px;
+
+    color: #f5bd45;
+    border: 1px solid rgba(212, 154, 42, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.watch-image-caption i {
+    font-size: 18px;
+}
+
+/* Watch animation */
+
+@keyframes watchFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-watch-wrapper {
+        margin: 45px auto 0;
+        max-width: 520px;
+    }
+
+    .hero-watch-image {
+        max-height: 420px;
+    }
+
+    .hero-features {
+        margin-top: 30px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 575.98px) {
+    .hero-section {
+        padding: 45px 0;
+        min-height: auto;
+    }
+
+    .hero-tag {
+        padding: 10px 14px;
+        font-size: 12px;
+        margin-bottom: 22px;
+    }
+
+    .hero-content h1 {
+        font-size: 37px;
+        letter-spacing: -0.8px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-outline {
+        width: 100%;
+        padding: 14px 12px;
+    }
+
+    .hero-features {
+        gap: 20px;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .hero-watch-wrapper {
+        margin-top: 35px;
+    }
+
+    .hero-watch-image {
+        max-height: 300px;
+    }
+
+    .watch-image-caption {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-watch-image {
+        animation: none;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-outline {
+        transition: none;
+    }
+}

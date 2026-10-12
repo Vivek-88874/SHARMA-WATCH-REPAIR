@@ -1,0 +1,61 @@
+/* Header */
+.watch-navbar {
+    background-color: #111827;
+    padding: 14px 0;
+}
+
+/* Brand */
+.watch-brand {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.watch-brand:hover {
+    color: #d49a2a;
+}
+
+.watch-brand i {
+    color: #d49a2a;
+    font-size: 27px;
+    margin-right: 8px;
+}
+
+/* Navigation Links */
+.watch-navbar .nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 10px 14px;
+    transition: color 0.3s ease;
+}
+
+.watch-navbar .nav-link:hover,
+.watch-navbar .nav-link:focus {
+    color: #d49a2a;
+}
+
+/* Mobile Menu Button */
+.watch-toggler {
+    border: 1px solid #d49a2a;
+}
+
+.watch-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(212, 154, 42, 0.3);
+}
+
+/* Mobile View */
+/* @media (max-width: 991.98px) {
+    .watch-navbar .navbar-collapse {
+        padding-top: 12px;
+    }
+
+    .watch-navbar .nav-link {
+        padding: 12px 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .watch-brand {
+        font-size: 17px;
+    }
+} */

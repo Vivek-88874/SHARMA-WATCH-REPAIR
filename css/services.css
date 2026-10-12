@@ -1,0 +1,339 @@
+/* =========================
+   SERVICES SECTION
+========================= */
+
+.services-section {
+    padding: 85px 0;
+    background: #080e17;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Heading */
+
+.services-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    padding: 0 15px;
+}
+
+.services-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #f5bd45;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.services-heading h2 {
+    color: #ffffff;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.services-heading h2 span {
+    color: #f5bd45;
+}
+
+.services-heading > p {
+    color: #bdc7d4;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* =========================
+   MARQUEE CONTAINER
+========================= */
+
+.services-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0 25px;
+}
+
+/* Moving Track */
+
+.services-track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 22px;
+    width: max-content;
+
+    animation: servicesMove 32s linear infinite;
+}
+
+/* Pause on Hover */
+
+.services-marquee:hover .services-track {
+    animation-play-state: paused;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.services-track .service-card {
+    flex: 0 0 300px;
+    width: 300px;
+    min-height: 310px;
+    padding: 32px 27px;
+
+    background: linear-gradient(
+        145deg,
+        #111e2e,
+        #0b1420
+    );
+
+    border: 1px solid rgba(212, 154, 42, 0.22);
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.services-track .service-card:hover {
+    transform: translateY(-6px);
+    border-color: #d49a2a;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon */
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(212, 154, 42, 0.55);
+    border-radius: 14px;
+
+    background: rgba(212, 154, 42, 0.09);
+    color: #f5bd45;
+    font-size: 30px;
+
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #101b29;
+    background: #f5bd45;
+    transform: rotate(-5deg);
+}
+
+/* Card Text */
+
+.service-card h3 {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.service-card > p {
+    flex-grow: 1;
+    color: #b7c2d0;
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 22px;
+}
+
+/* Link */
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    align-self: flex-start;
+
+    color: #f5bd45;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: gap 0.3s ease;
+}
+
+.service-link:hover {
+    color: #ffffff;
+    gap: 15px;
+}
+
+/* =========================
+   MARQUEE ANIMATION
+========================= */
+
+/*
+   Track ke andar 6 cards ka group
+   do baar hona chahiye.
+   Tabhi -50% par seamless loop banega.
+*/
+
+@keyframes servicesMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* =========================
+   BOTTOM CONTACT AREA
+========================= */
+
+.services-bottom {
+    margin: 45px 15px 0;
+    padding: 38px 20px;
+
+    border: 1px solid rgba(212, 154, 42, 0.3);
+    border-radius: 16px;
+
+    background: linear-gradient(
+        110deg,
+        #11243a,
+        #0a111b
+    );
+
+    text-align: center;
+}
+
+.services-bottom h3 {
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.services-bottom p {
+    color: #bdc7d4;
+    margin-bottom: 22px;
+}
+
+.services-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 13px 24px;
+    border-radius: 50px;
+
+    background: #f5bd45;
+    color: #101b29;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.services-contact-btn:hover {
+    background: #ffffff;
+    color: #101b29;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 767.98px) {
+    .services-section {
+        padding: 65px 0;
+    }
+
+    .services-heading {
+        margin-bottom: 30px;
+    }
+
+    .services-track {
+        gap: 16px;
+        animation-duration: 28s;
+    }
+
+    .services-track .service-card {
+        flex-basis: 280px;
+        width: 280px;
+        padding: 27px 22px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    .services-bottom {
+        margin-top: 35px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 575.98px) {
+    .services-section {
+        padding: 50px 0;
+    }
+
+    .services-heading h2 {
+        font-size: 32px;
+    }
+
+    .services-heading > p {
+        font-size: 14px;
+    }
+
+    .services-track {
+        gap: 14px;
+        animation-duration: 24s;
+    }
+
+    .services-track .service-card {
+        flex-basis: 260px;
+        width: 260px;
+        min-height: 300px;
+        padding: 25px 20px;
+    }
+
+    .service-card h3 {
+        font-size: 19px;
+    }
+
+    .services-bottom h3 {
+        font-size: 23px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .services-track {
+        animation: none;
+    }
+
+    .service-card,
+    .service-icon,
+    .service-link,
+    .services-contact-btn {
+        transition: none;
+    }
+}

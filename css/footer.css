@@ -1,0 +1,91 @@
+/* Footer Main */
+.watch-footer {
+    background-color: #111827;
+    color: #ffffff;
+    padding: 50px 0 0;
+}
+
+/* Footer Headings */
+.watch-footer h5 {
+    color: #d49a2a;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-brand {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.footer-brand i {
+    color: #d49a2a;
+    margin-right: 8px;
+}
+
+.footer-description {
+    color: #d6e0eb;
+    line-height: 1.8;
+    max-width: 350px;
+}
+
+/* Quick Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.watch-footer a {
+    color: #d6e0eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.watch-footer a:hover {
+    color: #d49a2a;
+}
+
+/* Contact Details */
+.watch-footer p {
+    line-height: 1.7;
+}
+
+.watch-footer p i {
+    color: #d49a2a;
+    margin-right: 8px;
+}
+
+/* Copyright */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    padding: 20px 0 10px;
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    color: #d6e0eb;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Mobile View */
+@media (max-width: 767.98px) {
+    .watch-footer {
+        padding-top: 35px;
+    }
+
+    .footer-brand {
+        font-size: 21px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+    }
+}
