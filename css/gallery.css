@@ -59,6 +59,33 @@
     color: #d49a2a;
 }
 
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.category-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #17365d;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #17365d;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background: #d49a2a;
+    color: #fff;
+    border-color: #d49a2a;
+}
+
+
 .watch-card {
     height: 230px;
     overflow: hidden;
@@ -77,6 +104,7 @@
 .watch-card:hover img {
     transform: scale(1.06);
 }
+
 
 @media (max-width: 767px) {
     .category-heading h3 {
