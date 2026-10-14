@@ -5,7 +5,7 @@ async function loadComponent(elementId, filePath) {
 
     if (!element) {
         console.error(elementId + " container nahi mila!");
-        return;
+        return false;
     }
 
     try {
@@ -18,31 +18,78 @@ async function loadComponent(elementId, filePath) {
         const html = await response.text();
         element.innerHTML = html;
 
+        return true;
+
     } catch (error) {
         console.error("Component load karne mein error:", error);
+        return false;
     }
 }
 
-// Page ke according path set karna
+
+// Header ke navigation links set karna
+function setHeaderLinks(isHtmlPage) {
+
+    // Home, About, Services, Gallery, Contact
+    document.querySelectorAll(".page-link").forEach(function (link) {
+
+        const section = link.dataset.section;
+
+        if (isHtmlPage) {
+            link.href = "../index.html#" + section;
+        } else {
+            link.href = "#" + section;
+        }
+    });
+
+    // Logo click karne par Home page khulega
+    const logo = document.querySelector(".watch-brand");
+
+    if (logo) {
+        logo.href = isHtmlPage
+            ? "../index.html#home"
+            : "#home";
+    }
+}
+
+
+// Page ke according components load karna
 document.addEventListener("DOMContentLoaded", async function () {
 
+    // Check karo ki current page html folder mein hai ya nahi
     const isHtmlPage = window.location.pathname
         .toLowerCase()
         .includes("/html/");
 
+    // Header aur Footer ke paths
     const componentPath = isHtmlPage
         ? "../components/"
         : "components/";
 
-    // Header aur Footer sabhi pages par
-    await loadComponent("header", componentPath + "header.html");
-    await loadComponent("footer", componentPath + "footer.html");
+    // Header load karo
+    const headerLoaded = await loadComponent(
+        "header",
+        componentPath + "header.html"
+    );
 
-    // Ye sections sirf main page par load honge
+    // Header load hone ke baad links set karo
+    if (headerLoaded) {
+        setHeaderLinks(isHtmlPage);
+    }
+
+    // Footer load karo
+    await loadComponent(
+        "footer",
+        componentPath + "footer.html"
+    );
+
+    // Ye sections sirf main index page par load honge
     if (!isHtmlPage) {
+
         await loadComponent("home", "html/home.html");
         await loadComponent("services", "html/services.html");
         await loadComponent("gallery", "html/gallery.html");
+
     }
 
 });
