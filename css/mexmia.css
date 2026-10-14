@@ -1,0 +1,124 @@
+/* Main Gallery */
+.mexima-gallery {
+    min-height: 500px;
+}
+
+/* Gallery Heading */
+.gallery-heading h1 {
+    color: #370321;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.gallery-subtitle {
+    color: #a47b45;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.gallery-heading p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Category Buttons */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.category-btn {
+    padding: 10px 24px;
+    border: 1px solid #370321;
+    border-radius: 25px;
+    background: #fff;
+    color: #370321;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: #370321;
+    color: #fff;
+}
+
+/* Selected Category */
+#brandTitle {
+    color: #370321;
+    font-weight: 600;
+}
+
+/* Watch Card */
+.watch-card {
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.3s ease;
+}
+
+.watch-card:hover {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.13);
+}
+
+/* Watch Image */
+.watch-card img {
+    display: block;
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+/* Watch Details */
+.watch-info {
+    padding: 18px;
+    text-align: center;
+}
+
+.watch-info h5 {
+    color: #370321;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.watch-brand {
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.watch-price {
+    color: #198754;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+/* No Products */
+.no-products {
+    padding: 35px 10px;
+    color: #666;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+    .gallery-heading h1 {
+        font-size: 25px;
+    }
+
+    .category-btn {
+        padding: 9px 16px;
+        font-size: 14px;
+    }
+
+    .watch-card img {
+        height: 230px;
+    }
+}
