@@ -1,0 +1,93 @@
+
+/* Watch Gallery */
+.watch-gallery {
+    background: #f4f7fb;
+    color: #17365d;
+}
+
+.gallery-heading {
+    margin-bottom: 40px;
+}
+
+.gallery-subtitle {
+    color: #d49a2a;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.gallery-heading h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin: 10px 0;
+    color: #17365d;
+}
+
+.gallery-heading p {
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+.category-heading h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.category-heading h3::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background: #d49a2a;
+    margin-top: 9px;
+}
+
+.view-all {
+    color: #17365d;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.view-all i {
+    color: #d49a2a;
+    margin-left: 5px;
+}
+
+.view-all:hover {
+    color: #d49a2a;
+}
+
+.watch-card {
+    height: 230px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(23, 54, 93, 0.10);
+}
+
+.watch-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.watch-card:hover img {
+    transform: scale(1.06);
+}
+
+@media (max-width: 767px) {
+    .category-heading h3 {
+        font-size: 20px;
+    }
+
+    .watch-card {
+        height: 220px;
+    }
+
+    .view-all {
+        font-size: 12px;
+    }
+}

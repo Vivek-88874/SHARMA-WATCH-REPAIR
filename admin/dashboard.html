@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Admin Dashboard | Sharma Watch Repair</title>
 
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="dashboard.css">
     <script src="admin.js" defer></script>
 </head>
+
 <body class="dashboard-page">
 
     <header class="dashboard-header">
@@ -87,12 +88,7 @@
             <form id="galleryForm" class="gallery-form">
                 <div class="form-group">
                     <label for="watchName">Watch Name</label>
-                    <input
-                        type="text"
-                        id="watchName"
-                        placeholder="e.g. Titan Analog Watch"
-                        maxlength="80"
-                        required>
+                    <input type="text" id="watchName" placeholder="e.g. Titan Analog Watch" maxlength="80" required>
                 </div>
 
                 <div class="form-group">
@@ -108,11 +104,7 @@
 
                 <div class="form-group">
                     <label for="watchImage">Select Watch Image</label>
-                    <input
-                        type="file"
-                        id="watchImage"
-                        accept="image/jpeg,image/png,image/webp"
-                        required>
+                    <input type="file" id="watchImage" accept="image/jpeg,image/png,image/webp" required>
                     <small>JPG, PNG or WEBP. Maximum 5 MB.</small>
                 </div>
 
@@ -126,8 +118,7 @@
                     Upload Watch Image
                 </button>
 
-                <p id="galleryMessage" class="gallery-message"
-                   role="status" aria-live="polite"></p>
+                <p id="galleryMessage" class="gallery-message" role="status" aria-live="polite"></p>
             </form>
 
             <div class="gallery-list-heading">
@@ -155,4 +146,5 @@
     </footer>
 
 </body>
+
 </html>
