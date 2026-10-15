@@ -1,38 +1,38 @@
 // Mexima Watch Data
 const watches = [
     {
-        name: "Soffile Classic Watch",
-        brand: "Soffile",
+        name: "Maxmia",
+        brand: "Men's",
         price: 1999,
         image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
     },
     {
-        name: "Soffile Premium Watch",
-        brand: "Soffile",
+        name: "Maxmia",
+        brand: "Men's",
         price: 2499,
         image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80"
     },
     {
-        name: "Soffile Elegant Watch",
-        brand: "Soffile",
+        name: "Maxmia",
+        brand: "Men's",
         price: 2999,
         image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80"
     },
     {
-        name: "Tissot Leccuper Classic",
-        brand: "Tissot Leccuper",
+        name: "Maxmia Woman's",
+        brand: "Woman's",
         price: 3499,
         image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80"
     },
     {
-        name: "Tissot Leccuper Premium",
-        brand: "Tissot Leccuper",
+        name: "Maxmia Womans's",
+        brand: "Woman's",
         price: 3999,
         image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80"
     },
     {
-        name: "Tissot Leccuper Elegant",
-        brand: "Tissot Leccuper",
+        name: "Maxmia Woman's",
+        brand: "Woman's",
         price: 4499,
         image: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
     }
