@@ -1,14 +1,20 @@
 .titan-gallery {
-    color: red;
+    color: #17365d;
 }
+.gallery-heading span{
+    font-size:15px;
+    font-weight: 600;
+    color: rgb(245, 189, 69);
 
+}
 .gallery-heading h1 {
     font-size: clamp(28px, 4vw, 42px);
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .gallery-heading p {
-    color: #64748b;
+    color: black;
+    font-weight: 600;
 }
 
 .category-buttons {
@@ -20,7 +26,7 @@
 
 .category-btn {
     padding: 10px 20px;
-    border: 2px solid #17365d;
+    border: 2px solid rgb(245, 189, 69);
     border-radius: 25px;
     background: white;
     color: #17365d;
@@ -80,7 +86,8 @@
 @media (max-width: 576px) {
     .category-btn {
         padding: 8px 12px;
-        font-size: 13px;
+        font-size: 14px;
+        font-weight: 700;
     }
 
     .watch-card img {
