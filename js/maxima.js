@@ -48,7 +48,7 @@ function showWatches(selectedBrand) {
 
     // Heading update
     brandTitle.textContent = selectedBrand === "All"
-        ? "All Mexima Watches"
+        ? "All Maxima Watches"
         : selectedBrand + " Watches";
 
     // Filter watches
@@ -86,12 +86,7 @@ function showWatches(selectedBrand) {
                     <div class="watch-info">
 
                         <h5>${watch.name}</h5>
-
-                        <p class="watch-brand">
-                            ${watch.brand}
-                        </p>
-
-                        <div class="watch-price">
+                     <div class="watch-price">
                             ₹${watch.price.toLocaleString("en-IN")}
                         </div>
 

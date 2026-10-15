@@ -195,62 +195,6 @@
     }
 }
 
-/* =========================
-   BOTTOM CONTACT AREA
-========================= */
-
-.services-bottom {
-    margin: 45px 15px 0;
-    padding: 38px 20px;
-
-    border: 1px solid rgba(212, 154, 42, 0.3);
-    border-radius: 16px;
-
-    background: linear-gradient(
-        110deg,
-        #11243a,
-        #0a111b
-    );
-
-    text-align: center;
-}
-
-.services-bottom h3 {
-    color: #ffffff;
-    font-size: 27px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.services-bottom p {
-    color: #bdc7d4;
-    margin-bottom: 22px;
-}
-
-.services-contact-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-
-    padding: 13px 24px;
-    border-radius: 50px;
-
-    background: #f5bd45;
-    color: #101b29;
-
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-
-    transition: all 0.3s ease;
-}
-
-.services-contact-btn:hover {
-    background: #ffffff;
-    color: #101b29;
-    transform: translateY(-3px);
-}
 
 /* =========================
    TABLET

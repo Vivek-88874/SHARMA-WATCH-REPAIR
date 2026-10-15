@@ -13,8 +13,8 @@ const watches = [
         image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80"
     },
     {
-        name: "Ferriya Classic Watch",
-        brand: "Ferriya",
+        name: "Fria Classic Watch",
+        brand: "Fria",
         price: 2799,
         image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80"
     },
@@ -25,8 +25,8 @@ const watches = [
         image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80"
     },
     {
-        name: "Gyces Classic Watch",
-        brand: "Gyces",
+        name: "Guess Classic Watch",
+        brand: "Guess",
         price: 1999,
         image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80"
     }
@@ -76,11 +76,6 @@ function showWatches(selectedBrand) {
 
                     <div class="watch-info">
                         <h5>${watch.name}</h5>
-
-                        <p class="watch-brand">
-                            ${watch.brand}
-                        </p>
-
                         <div class="watch-price">
                             ₹${watch.price.toLocaleString("en-IN")}
                         </div>

@@ -34,40 +34,28 @@ async function loadComponent(elementId, filePath) {
 // ==========================================
 function setHeaderLinks(isHtmlPage) {
 
-    // Home, About, Services, Gallery aur Contact links
     document.querySelectorAll(".page-link").forEach(function (link) {
 
         const section = link.dataset.section;
 
-        if (!section) {
-            return;
-        }
+        if (!section) return;
 
         if (isHtmlPage) {
-
-            // Titan, Timex, Mexima jaise pages se
-            // Index page ke sahi section par jao
             link.href = "../index.html#" + section;
-
         } else {
-
-            // Index page par usi section par jao
             link.href = "#" + section;
-
         }
     });
 
-
-    // Logo click karne par Home section khulega
+    // Logo click karne par Home section
     const logo = document.querySelector(".watch-brand");
 
     if (logo) {
-
         logo.href = isHtmlPage
             ? "../index.html#home"
             : "#home";
 
-        // Logo image ka path bhi sahi karna
+        // Logo image ka correct path
         const logoImage = logo.querySelector("img");
 
         if (logoImage) {
@@ -80,7 +68,28 @@ function setHeaderLinks(isHtmlPage) {
 
 
 // ==========================================
-// 3. Page ke according components load karna
+// 3. Hash ke according correct section par scroll
+// ==========================================
+function scrollToHashSection() {
+
+    const hash = window.location.hash;
+
+    if (!hash) return;
+
+    const sectionId = decodeURIComponent(hash.substring(1));
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+        section.scrollIntoView({
+            behavior: "auto",
+            block: "start"
+        });
+    }
+}
+
+
+// ==========================================
+// 4. Page ke according components load karna
 // ==========================================
 document.addEventListener("DOMContentLoaded", async function () {
 
@@ -89,42 +98,44 @@ document.addEventListener("DOMContentLoaded", async function () {
         .toLowerCase()
         .includes("/html/");
 
-
     // Header aur Footer ke paths
     const componentPath = isHtmlPage
         ? "../components/"
         : "components/";
 
-
-    // Header load karo
+    // Header load
     const headerLoaded = await loadComponent(
         "header",
         componentPath + "header.html"
     );
 
-
-    // Header load hone ke baad links set karo
     if (headerLoaded) {
         setHeaderLinks(isHtmlPage);
     }
 
-
-    // Footer load karo
+    // Footer load
     await loadComponent(
         "footer",
         componentPath + "footer.html"
     );
 
-
-    // Ye sections sirf main Index page par load honge
+    // Sirf Index page par main sections load honge
     if (!isHtmlPage) {
 
         await loadComponent("home", "html/home.html");
+
+        // About ki file available ho to yahan load kar sakte ho
+        // await loadComponent("about", "html/about.html");
 
         await loadComponent("services", "html/services.html");
 
         await loadComponent("gallery", "html/gallery.html");
 
+        // Contact ki file available ho to yahan load kar sakte ho
+        // await loadComponent("contact", "html/contact.html");
+
+        // Components load hone ke baad correct section par scroll
+        scrollToHashSection();
     }
 
 });
