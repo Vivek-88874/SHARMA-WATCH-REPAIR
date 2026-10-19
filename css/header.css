@@ -226,7 +226,7 @@ main {
 .watch-navbar .navbar-toggler {
     flex-shrink: 0;
 
-    padding: 7px 10px;
+    padding: 10px ;
 
     border: 2px double #d49a2a;
     border-radius: 9px;
@@ -283,7 +283,7 @@ main {
     .watch-navbar .navbar-collapse {
         position: absolute;
         top: 85px;
-        right: 12px;
+        right: 0;
         left: auto;
 
         width: min(280px, calc(100vw - 24px));
@@ -388,7 +388,7 @@ main {
     .watch-navbar .navbar-collapse {
         position: absolute;
         top: 77px;
-        right: 8px;
+        right: 0px;
         left: auto;
 
         width: min(270px, calc(100vw - 16px));
@@ -467,7 +467,7 @@ main {
     }
 
     .watch-navbar .watch-brand {
-        gap: 5px;
+        gap: 8px;
         font-size: 12px;
     }
 
