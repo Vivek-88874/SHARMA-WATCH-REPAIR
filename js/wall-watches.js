@@ -8,42 +8,42 @@ const wallWatches = [
         name: "Classic Wall Watch",
         brand: "Sonata",
         price: 250,
-        image: "images/wall-watches/watch-1.jpg"
+        image: "../images/wall-watches/watch-1.jpg"
     },
     {
         id: 2,
         name: "Modern Wall Watch",
         brand: "Maxima",
         price: 450,
-        image: "images/wall-watches/watch-2.jpg"
+        image: "../images/wall-watches/watch-2.jpg"
     },
     {
         id: 3,
         name: "Wooden Wall Watch",
         brand: "Titan",
         price: 750,
-        image: "images/wall-watches/watch-3.jpg"
+        image: "../images/wall-watches/watch-3.jpg"
     },
     {
         id: 4,
         name: "Premium Wall Watch",
         brand: "Timex",
         price: 1200,
-        image: "images/wall-watches/watch-4.jpg"
+        image: "../images/wall-watches/watch-4.jpg"
     },
     {
         id: 5,
         name: "Round Wall Watch",
         brand: "Sonata",
         price: 350,
-        image: "images/wall-watches/watch-1.jpg"
+        image: "../images/wall-watches/watch-1.jpg"
     },
     {
         id: 6,
         name: "Designer Wall Watch",
         brand: "Titan",
         price: 950,
-        image: "images/wall-watches/watch-3.jpg"
+        image: "../images/wall-watches/watch-3.jpg"
     }
 ];
 

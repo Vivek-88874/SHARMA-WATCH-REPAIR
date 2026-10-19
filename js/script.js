@@ -190,8 +190,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         await loadComponent("home", "html/home.html");
 
-         await loadComponent("about", "html/wall-watches.html");
-
         await loadComponent("services", "html/services.html");
 
         await loadComponent("gallery", "html/gallery.html");
