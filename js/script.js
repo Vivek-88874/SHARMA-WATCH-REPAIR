@@ -63,6 +63,13 @@ function setHeaderLinks(isHtmlPage) {
                 : "images/sharmawatchlogo.jpeg";
         }
     }
+    const wallWatchLink = document.querySelector(".wall-watch-link");
+
+    if (wallWatchLink) {
+        wallWatchLink.href = isHtmlPage
+            ? "wall-watches.html"
+            : "html/wall-watches.html";
+    }
 }
 
 
