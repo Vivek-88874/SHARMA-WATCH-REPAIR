@@ -3,7 +3,7 @@
 ========================= */
 
 .services-section {
-    padding: 85px 0;
+    padding: 80px 0;
     background: #080e17;
     color: #ffffff;
     overflow: hidden;
@@ -13,14 +13,14 @@
 
 .services-heading {
     max-width: 720px;
-    margin: 0 auto 45px;
+    margin: 0 auto 50px;
     padding: 0 15px;
 }
 
 .services-tag {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     color: #f5bd45;
     font-size: 13px;
     font-weight: 700;
@@ -64,7 +64,6 @@
     align-items: stretch;
     gap: 22px;
     width: max-content;
-
     animation: servicesMove 32s linear infinite;
 }
 

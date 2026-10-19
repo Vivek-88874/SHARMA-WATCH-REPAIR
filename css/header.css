@@ -1,61 +1,326 @@
-/* Header */
-.watch-navbar {
-    background-color: #111827;
-    padding: 14px 0;
+
+/* ================= GLOBAL ================= */
+
+* {
+    box-sizing: border-box;
 }
 
-/* Brand */
-.watch-brand {
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+
+.watch-header {
+    height: 90px;
+}
+
+
+
+/* ================= BOOTSTRAP NAVBAR ================= */
+
+.watch-navbar {
+    height: 88px;
+    width: 100%;
+    padding: 0 20px;
+
+    background-color: #111827;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* ================= LOGO / BRAND ================= */
+
+.watch-navbar .watch-brand {
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0;
+    margin: 0;
+
     color: #ffffff;
     font-size: 21px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+    text-decoration: none;
 }
 
-.watch-brand:hover {
+.watch-navbar .watch-brand:hover {
     color: #d49a2a;
 }
 
-.watch-brand i {
-    color: #d49a2a;
-    font-size: 27px;
-    margin-right: 8px;
+/* Logo Image */
+.watch-navbar .watch-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: contain;
 }
 
-/* Navigation Links */
+/* ================= NAVIGATION MENU ================= */
+
+.watch-navbar .navbar-collapse {
+    background-color: #111827;
+}
+
+.watch-navbar .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 90px;
+}
+
 .watch-navbar .nav-link {
-    color: #ffffff;
+    position: relative;
+
+    padding: 10px 8px;
+
+    color: #ffffff !important;
+    font-size: 20px;
     font-weight: 500;
-    padding: 10px 14px;
+
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
+/* Hover and Active */
 .watch-navbar .nav-link:hover,
-.watch-navbar .nav-link:focus {
-    color: #d49a2a;
+.watch-navbar .nav-link:focus,
+.watch-navbar .nav-link.active {
+    color: #d49a2a !important;
 }
 
-/* Mobile Menu Button */
-.watch-toggler {
-    border: 1px solid #d49a2a;
+/* ================= GOLD UNDERLINE ================= */
+
+.watch-navbar .nav-link::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #d49a2a;
+
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
 }
 
-.watch-toggler:focus {
-    box-shadow: 0 0 0 0.2rem rgba(212, 154, 42, 0.3);
+.watch-navbar .nav-link:hover::before,
+.watch-navbar .nav-link.active::before {
+    width: 100%;
 }
 
-/* Mobile View */
-/* @media (max-width: 991.98px) {
+/* ================= HAMBURGER BUTTON ================= */
+
+.watch-navbar .navbar-toggler {
+    border: double #d49a2a;
+    padding: 6px 9px;
+}
+
+.watch-navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* White hamburger icon */
+.watch-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+    .watch-navbar {
+        padding: 0 15px;
+    }
+
+    /* Brand */
+    .watch-navbar .watch-brand {
+        font-size: 18px;
+        gap: 8px;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
+    .watch-navbar .watch-logo {
+        width: 75px;
+        height: 75px;
+        flex-shrink: 0;
+    }
+
+    /* Hamburger Button */
+    .watch-navbar .navbar-toggler {
+        display: block;
+        flex-shrink: 0;
+        margin-left: auto;
+        border: double #d49a2a;
+        padding: 6px 9px;
+    }
+
+    /* Dropdown Menu */
     .watch-navbar .navbar-collapse {
-        padding-top: 12px;
+        position: absolute;
+        top: 88px;
+        right: 0;
+        left: auto;
+
+        width: 220px;
+        padding: 10px 15px;
+
+        background-color: #111827;
+        border-radius: 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Vertical Links */
+    .watch-navbar .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+        margin: 0;
+        gap: 10px;
+    }
+
+    .watch-navbar .nav-item {
+        width: 100%;
     }
 
     .watch-navbar .nav-link {
-        padding: 12px 8px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        display: block;
+        width: 100%;
+        padding: 8px 5px;
+
+        font-size: 16px;
+        text-align: left;
     }
 
-    .watch-brand {
-        font-size: 17px;
+    /* Gold Underline */
+    .watch-navbar .nav-link::before {
+        left: 5px;
+        bottom: 2px;
+        transform: none;
     }
-} */
+
+    .watch-navbar .nav-link:hover::before,
+    .watch-navbar .nav-link.active::before {
+        width: 35px;
+    }
+}
+/* ================= MOBILE ================= */
+
+@media (max-width: 575px) {
+
+    /* Navbar */
+    .watch-navbar {
+        width: 100%;
+    }
+
+    /* Brand */
+    .watch-navbar .watch-brand {
+        height: 88px;
+        gap: 5px;
+        font-size: 14px;
+    }
+
+    /* Original mobile logo sizing */
+    .watch-navbar .watch-logo {
+        width: 90px;
+        height: 90px;
+
+        object-fit: contain;
+       
+    }
+
+    /* Original right-side mobile menu */
+    .watch-navbar .navbar-collapse {
+        position: absolute;
+
+        top: 88px;
+        right: 0;
+        left: auto;
+
+        width: 180px;
+
+        padding: 10px 15px;
+
+        background-color: #111827;
+        border-radius: 0;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Navigation list */
+    .watch-navbar .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+        margin: 0;
+        gap: 10px;
+    }
+
+    .watch-navbar .nav-item {
+        width: 100%;
+    }
+
+    .watch-navbar .nav-link {
+        display: block;
+
+        width: 100%;
+        padding: 8px 5px;
+
+        font-size: 15px;
+        text-align: left;
+    }
+
+    /* Mobile underline */
+    .watch-navbar .nav-link::before {
+        left: 5px;
+        bottom: 2px;
+        transform: none;
+    }
+
+    .watch-navbar .nav-link:hover::before,
+    .watch-navbar .nav-link.active::before {
+        width: 35px;
+    }
+}
+
+/* ================= EXTRA SMALL MOBILE ================= */
+
+@media (max-width: 380px) {
+
+    .watch-navbar {
+        padding: 0 8px;
+    }
+
+    .watch-navbar .watch-brand {
+        font-size: 12px;
+        gap: 4px;
+    }
+
+    .watch-navbar .watch-logo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .watch-navbar .navbar-toggler {
+        padding: 5px 7px;
+    }
+}
