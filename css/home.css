@@ -1,4 +1,7 @@
-
+/* Homepage section ka extra gap remove */
+#home {
+    margin-top: 0;
+}
 /* =========================================
    HERO SECTION - SHARMA WATCH REPAIR
 ========================================= */
