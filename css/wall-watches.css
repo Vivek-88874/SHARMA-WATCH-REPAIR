@@ -1,18 +1,23 @@
-/* ==============================
-   WALL WATCH PAGE
-============================== */
+/* =========================================
+   WALL WATCHES PAGE - GLOBAL DESIGN
+========================================= */
 
 :root {
     --primary: #17365d;
     --primary-dark: #102a43;
     --gold: #d49a2a;
     --page-bg: #f5f7fa;
+    --white: #ffffff;
     --border-color: #e2e7ee;
     --text-color: #252b33;
     --muted-color: #6c757d;
+    --shadow: 0 5px 20px rgba(16, 42, 67, 0.07);
+    --radius: 12px;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -23,75 +28,178 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Page heading */
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
 
 .wall-watch-heading {
-    padding: 35px 24px;
-    background: var(--primary);
-    color: #fff;
+    margin: 0;
+    padding: 34px 28px;
+
+    background: linear-gradient(
+        115deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
+    color: var(--white);
+    border-bottom: 3px solid var(--gold);
+}
+
+.wall-watch-heading .container-fluid {
+    padding: 0;
+    text-align: center;
 }
 
 .wall-watch-heading h1 {
-    margin: 0 0 8px;
-    font-size: 32px;
+    margin: 0 0 9px;
+    color: #f5bd45;
+    font-size: clamp(26px, 3vw, 36px);
     font-weight: 700;
+    letter-spacing: 0.3px;
 }
 
 .wall-watch-heading p {
     margin: 0;
     color: #e0e8f1;
     font-size: 15px;
+    line-height: 1.6;
 }
 
-/* Main layout */
+
+/* =========================================
+   MAIN PAGE LAYOUT
+========================================= */
 
 .wall-watch-container {
-    padding: 30px 24px;
+    padding: 28px 24px 45px;
 }
 
 .wall-watch-layout {
     display: grid;
-    grid-template-columns: 280px minmax(0, 1fr);
-    gap: 25px;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 26px;
     align-items: start;
+
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    /* Sticky sidebar ke liye overflow visible rakho */
+    overflow: visible;
 }
 
-/* Sidebar */
+
+/* =========================================
+   FILTER SIDEBAR - STICKY DESIGN
+========================================= */
 
 .filter-sidebar {
+    position: sticky;
+    top: 105px;
+    z-index: 10;
+
     width: 100%;
-    padding: 22px;
-    background: #fff;
+    max-height: calc(100vh - 125px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    align-self: start;
+    padding: 0 20px 20px;
+
+    background: var(--white);
     border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    scrollbar-width: thin;
+    scrollbar-color: #c7d0dc transparent;
+}
+
+/* Sidebar scrollbar - Chrome / Edge */
+.filter-sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.filter-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.filter-sidebar::-webkit-scrollbar-thumb {
+    background: #c7d0dc;
     border-radius: 10px;
 }
 
+.filter-sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+
+/* Filter title row */
+
 .filter-heading {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    padding-bottom: 18px;
+    gap: 12px;
+
+    margin: 0 -20px;
+    padding: 19px 20px;
+
+    background: var(--white);
     border-bottom: 1px solid var(--border-color);
 }
 
 .filter-heading h2 {
     margin: 0;
-    font-size: 21px;
+    color: var(--primary-dark);
+    font-size: 20px;
     font-weight: 700;
 }
 
 .filter-heading button {
-    padding: 0;
-    border: none;
-    background: transparent;
+    padding: 6px 9px;
+
+    background: #fff8e9;
     color: var(--primary);
-    font-size: 13px;
-    font-weight: 600;
+
+    border: 1px solid #f0d8a7;
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
 }
 
+.filter-heading button:hover {
+    background: var(--gold);
+    color: #ffffff;
+}
+
+
+/* =========================================
+   PRICE AND BRAND FILTER GROUPS
+========================================= */
+
 .filter-group {
-    padding: 20px 0;
+    padding: 21px 0;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -101,46 +209,105 @@ body {
 }
 
 .filter-group h3 {
-    margin: 0 0 15px;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin: 0 0 17px;
+
+    color: var(--primary-dark);
+    font-size: 15px;
     font-weight: 700;
 }
+
+.filter-group h3::before {
+    content: "";
+    display: block;
+
+    width: 4px;
+    height: 18px;
+
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+
+/* Individual checkbox row */
 
 .filter-option {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 13px;
+
+    width: 100%;
+    margin: 0 0 14px;
+    padding: 2px 0;
+
     color: #414955;
     font-size: 14px;
+    line-height: 1.5;
+
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .filter-option:last-child {
     margin-bottom: 0;
 }
 
+.filter-option:hover {
+    color: var(--primary);
+}
+
 .filter-option input {
-    width: 16px;
-    height: 16px;
+    flex: 0 0 17px;
+
+    width: 17px;
+    height: 17px;
     margin: 0;
+
     accent-color: var(--primary);
     cursor: pointer;
 }
 
-/* Product toolbar */
+.filter-option input:checked + span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.filter-option span {
+    min-width: 0;
+}
+
+
+/* =========================================
+   PRODUCT AREA / TOOLBAR
+========================================= */
+
+.wall-watch-products {
+    min-width: 0;
+}
 
 .products-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
+
     margin-bottom: 22px;
+    padding: 18px 20px;
+
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: 0 3px 12px rgba(16, 42, 67, 0.035);
 }
 
 .products-toolbar h2 {
     margin: 0 0 6px;
-    font-size: 24px;
+
+    color: var(--primary-dark);
+    font-size: 23px;
     font-weight: 700;
 }
 
@@ -148,189 +315,409 @@ body {
     margin: 0;
     color: var(--muted-color);
     font-size: 13px;
+    line-height: 1.5;
 }
 
 .products-toolbar select {
-    max-width: 210px;
-    padding: 10px 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background: #fff;
+    width: auto;
+    max-width: 230px;
+    min-height: 42px;
+    padding: 9px 32px 9px 12px;
+
+    background-color: #ffffff;
     color: var(--text-color);
+
+    border: 1px solid #d6dde6;
+    border-radius: 7px;
+
     font-size: 13px;
-    outline-color: var(--primary);
+    outline: none;
+    cursor: pointer;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
-/* Product grid */
+.products-toolbar select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(23, 54, 93, 0.1);
+}
+
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+
+    align-items: stretch;
 }
 
-/* Product card */
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
 
 .product-card {
+    display: flex;
+    flex-direction: column;
+
     min-width: 0;
     overflow: hidden;
-    background: #fff;
+
+    background: var(--white);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: var(--radius);
+
     transition: transform 0.25s ease,
-                box-shadow 0.25s ease;
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
 }
 
 .product-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 22px rgba(16, 42, 67, 0.10);
+    border-color: #d5deea;
+    box-shadow: 0 10px 25px rgba(16, 42, 67, 0.11);
 }
+
+
+/* Product image */
 
 .product-image-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
-    background: #fff;
+
+    width: 100%;
+    padding: 14px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #f0f2f5;
 }
 
 .product-image {
     display: block;
+
     width: 100%;
     aspect-ratio: 1 / 1;
+
     object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
+.product-card:hover .product-image {
+    transform: scale(1.035);
+}
+
+
+/* Product information */
+
 .product-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
     padding: 15px;
-    border-top: 1px solid #f0f2f5;
 }
 
 .product-brand {
-    margin-bottom: 6px;
+    margin-bottom: 7px;
+
     color: var(--muted-color);
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
 }
 
 .product-name {
-    min-height: 40px;
-    margin: 0 0 10px;
-    font-size: 16px;
+    min-height: 42px;
+    margin: 0 0 12px;
+
+    color: var(--primary-dark);
+    font-size: 15px;
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
 }
 
 .product-price {
-    margin: 0;
+    margin: auto 0 0;
+    padding-top: 3px;
+
     color: var(--primary);
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
 }
 
-/* No products */
+
+/* =========================================
+   NO PRODUCTS FOUND
+========================================= */
 
 .no-products {
     padding: 55px 20px;
-    background: #fff;
+
+    background: var(--white);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: var(--radius);
+
     text-align: center;
 }
 
 .no-products > i {
-    color: var(--muted-color);
-    font-size: 35px;
+    color: var(--gold);
+    font-size: 40px;
 }
 
 .no-products h3 {
-    margin-top: 12px;
-    font-size: 20px;
+    margin: 13px 0 8px;
+    color: var(--primary-dark);
+    font-size: 21px;
+    font-weight: 700;
 }
 
 .no-products p {
+    margin-bottom: 20px;
     color: var(--muted-color);
     font-size: 14px;
 }
 
 .no-products button {
     padding: 10px 18px;
-    border: none;
-    border-radius: 5px;
+
     background: var(--primary);
-    color: #fff;
+    color: #ffffff;
+
+    border: 1px solid var(--primary);
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: background-color 0.2s ease;
 }
 
-/* Mobile filter buttons: hidden on desktop */
+.no-products button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* =========================================
+   MOBILE FILTER BUTTONS
+========================================= */
 
 .mobile-filter-buttons {
     display: none;
 }
 
-/* Mobile filter drawer */
+.mobile-filter-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    min-width: 0;
+    min-height: 45px;
+    padding: 10px 12px;
+
+    background: var(--white);
+    color: var(--primary);
+
+    border: 1px solid #d8e0eb;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.mobile-filter-btn:hover {
+    background: #edf3fa;
+    border-color: var(--primary);
+}
+
+.mobile-filter-btn i {
+    font-size: 16px;
+}
+
+
+/* =========================================
+   MOBILE FILTER DRAWER
+========================================= */
 
 .mobile-filter-drawer {
     height: 85vh !important;
+    max-height: 700px;
+
+    background: var(--white);
     border-radius: 18px 18px 0 0;
 }
 
 .mobile-filter-drawer .offcanvas-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    padding: 18px 20px;
+
+    background: var(--white);
     border-bottom: 1px solid var(--border-color);
 }
 
 .mobile-filter-drawer .offcanvas-title {
+    color: var(--primary-dark);
     font-size: 20px;
     font-weight: 700;
 }
 
+.mobile-filter-drawer .offcanvas-body {
+    padding: 0 20px 20px;
+}
+
+.mobile-filter-drawer .filter-group {
+    padding: 22px 0;
+}
+
+.mobile-filter-drawer .filter-option {
+    min-height: 28px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+
+/* Drawer action buttons */
+
 .drawer-actions {
+    position: sticky;
+    bottom: -20px;
+    z-index: 2;
+
     display: flex;
     gap: 12px;
-    padding: 20px 0 10px;
+
+    margin: 0 -20px;
+    padding: 16px 20px 20px;
+
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
 }
 
 .drawer-actions button {
     flex: 1;
-    min-height: 44px;
-    border-radius: 6px;
-    font-weight: 600;
+    min-width: 0;
+    min-height: 45px;
+    padding: 10px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 700;
 }
 
 #drawerClearFilters {
-    border: 1px solid var(--primary);
-    background: #fff;
+    background: #ffffff;
     color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+#drawerClearFilters:hover {
+    background: #edf3fa;
 }
 
 .apply-filter-btn {
-    border: 1px solid var(--primary);
     background: var(--primary);
-    color: #fff;
+    color: #ffffff;
+    border: 1px solid var(--primary);
 }
 
-/* ==============================
-   TABLET
-============================== */
+.apply-filter-btn:hover {
+    background: var(--primary-dark);
+}
 
-@media (max-width: 1100px) {
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+/* =========================================
+   LAPTOP / SMALL DESKTOP
+========================================= */
+
+@media (max-width: 1200px) {
+    .wall-watch-container {
+        padding-right: 18px;
+        padding-left: 18px;
     }
 
     .wall-watch-layout {
-        grid-template-columns: 250px minmax(0, 1fr);
+        grid-template-columns: 245px minmax(0, 1fr);
         gap: 18px;
     }
 
     .filter-sidebar {
-        padding: 18px;
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+
+    .filter-heading {
+        margin-right: -17px;
+        margin-left: -17px;
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
     }
 }
 
-/* ==============================
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .wall-watch-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .filter-sidebar {
+        top: 100px;
+        max-height: calc(100vh - 115px);
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .filter-heading {
+        margin-right: -14px;
+        margin-left: -14px;
+        padding: 16px 14px;
+    }
+
+    .filter-heading h2 {
+        font-size: 18px;
+    }
+
+    .products-toolbar {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+
+    .products-toolbar h2 {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================
    MOBILE
-============================== */
+========================================= */
 
 @media (max-width: 767px) {
     .wall-watch-heading {
@@ -338,57 +725,55 @@ body {
     }
 
     .wall-watch-heading h1 {
-        font-size: 26px;
+        font-size: 27px;
+    }
+
+    .wall-watch-heading p {
+        font-size: 14px;
     }
 
     .wall-watch-container {
-        padding: 18px 12px;
+        padding: 18px 12px 35px;
     }
 
     .wall-watch-layout {
         display: block;
     }
 
+    /* Desktop sidebar hide */
     .filter-sidebar {
         display: none;
     }
 
+    /* Mobile filter controls */
     .mobile-filter-buttons {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
-        margin-bottom: 22px;
-    }
 
-    .mobile-filter-btn {
-        min-height: 44px;
-        padding: 10px 8px;
-        border: 1px solid var(--border-color);
-        border-radius: 7px;
-        background: #fff;
-        color: var(--primary);
-        font-size: 13px;
-        font-weight: 600;
-    }
-
-    .mobile-filter-btn i {
-        margin-right: 4px;
+        margin-bottom: 18px;
     }
 
     .products-toolbar {
-        align-items: flex-start;
+        align-items: center;
         flex-wrap: wrap;
+        gap: 12px;
+
         margin-bottom: 16px;
+        padding: 15px;
     }
 
     .products-toolbar h2 {
         font-size: 21px;
     }
 
-    .products-toolbar select {
-        max-width: 100%;
-        padding: 9px 8px;
+    .products-toolbar p {
         font-size: 12px;
+    }
+
+    .products-toolbar select {
+        width: 100%;
+        max-width: 100%;
     }
 
     .product-grid {
@@ -397,27 +782,50 @@ body {
     }
 
     .product-image-wrap {
-        padding: 8px;
+        padding: 9px;
     }
 
     .product-info {
-        padding: 10px;
+        padding: 11px;
+    }
+
+    .product-brand {
+        font-size: 10px;
     }
 
     .product-name {
         min-height: 38px;
-        font-size: 14px;
+        margin-bottom: 10px;
+        font-size: 13px;
     }
 
     .product-price {
         font-size: 18px;
     }
+
+    .no-products {
+        padding: 40px 15px;
+    }
 }
 
-/* Small mobile */
 
-@media (max-width: 360px) {
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+    .wall-watch-container {
+        padding-right: 9px;
+        padding-left: 9px;
+    }
+
+    .mobile-filter-buttons {
+        gap: 7px;
+    }
+
     .mobile-filter-btn {
+        gap: 4px;
+        padding: 9px 5px;
         font-size: 12px;
     }
 
@@ -425,11 +833,43 @@ body {
         gap: 8px;
     }
 
-    .product-name {
-        font-size: 13px;
+    .product-image-wrap {
+        padding: 6px;
     }
 
     .product-info {
         padding: 8px;
+    }
+
+    .product-name {
+        font-size: 12px;
+    }
+
+    .product-price {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+
+/* Motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
