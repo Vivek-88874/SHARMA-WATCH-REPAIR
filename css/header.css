@@ -62,8 +62,12 @@ html {
    HEADER / FIXED NAVBAR
 ========================================= */
 
+/* Header wrapper: fixed navbar ki jagah reserve karega */
 .watch-header {
-    min-height: 88px;
+    height: 90px;
+    min-height: 90px;
+    margin: 0;
+    padding: 0;
 }
 
 .watch-navbar {
@@ -76,27 +80,35 @@ html {
     height: 90px;
     min-height: 90px;
 
+    margin: 0;
     padding: 0 24px;
 
     background-color: #111827;
     border-bottom: 3px solid #d49a2a;
 }
 
-/* Navbar inner content */
+/* Navbar content alignment */
 .watch-navbar .container,
 .watch-navbar .container-fluid {
+    height: 87px;
     min-height: 87px;
+
     display: flex;
     align-items: center;
 }
 
-/* Fixed navbar ke neeche homepage content */
+/* Main content ke upar extra padding nahi */
 main {
-    padding-top:0;
     margin: 0;
+    padding: 0;
 }
 
-/* Section links par click karne par heading cover na ho */
+/* Home section ke start par extra margin/padding nahi */
+#home {
+    margin-top: 0;
+}
+
+/* Anchor navigation offset */
 #home,
 #about,
 #services,
@@ -149,7 +161,6 @@ main {
 
 /* =========================================
    NAVIGATION - LAPTOP
-   992px and above
 ========================================= */
 
 .watch-navbar .navbar-collapse {
@@ -225,7 +236,6 @@ main {
     box-shadow: 0 0 0 2px rgba(212, 154, 42, 0.25);
 }
 
-/* White hamburger icon */
 .watch-navbar .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
@@ -233,10 +243,14 @@ main {
 
 /* =========================================
    TABLET
-   576px to 991.98px
 ========================================= */
 
 @media (min-width: 576px) and (max-width: 991.98px) {
+
+    .watch-header {
+        height: 88px;
+        min-height: 88px;
+    }
 
     .watch-navbar {
         height: 88px;
@@ -246,6 +260,7 @@ main {
 
     .watch-navbar .container,
     .watch-navbar .container-fluid {
+        height: 85px;
         min-height: 85px;
         flex-wrap: nowrap;
     }
@@ -260,13 +275,11 @@ main {
         height: 60px;
     }
 
-    /* Hamburger right side */
     .watch-navbar .navbar-toggler {
         display: block;
         margin-left: auto;
     }
 
-    /* Dropdown menu */
     .watch-navbar .navbar-collapse {
         position: absolute;
         top: 85px;
@@ -287,7 +300,6 @@ main {
     }
 
     .watch-navbar .navbar-nav {
-        display: flex;
         flex-direction: column;
         align-items: stretch;
 
@@ -301,9 +313,7 @@ main {
     }
 
     .watch-navbar .nav-link {
-        display: block;
         width: 100%;
-
         padding: 11px 8px;
         font-size: 16px;
         text-align: left;
@@ -324,10 +334,14 @@ main {
 
 /* =========================================
    MOBILE
-   575.98px and below
 ========================================= */
 
 @media (max-width: 575.98px) {
+
+    .watch-header {
+        height: 80px;
+        min-height: 80px;
+    }
 
     .watch-navbar {
         height: 80px;
@@ -337,11 +351,11 @@ main {
 
     .watch-navbar .container,
     .watch-navbar .container-fluid {
+        height: 77px;
         min-height: 77px;
         flex-wrap: nowrap;
     }
 
-    /* Logo + name in one row */
     .watch-navbar .watch-brand {
         max-width: calc(100% - 58px);
         min-width: 0;
@@ -363,7 +377,6 @@ main {
     .watch-navbar .navbar-toggler {
         display: block;
         margin-left: auto;
-
         padding: 6px 8px;
     }
 
@@ -372,7 +385,6 @@ main {
         height: 1.4em;
     }
 
-    /* Mobile dropdown */
     .watch-navbar .navbar-collapse {
         position: absolute;
         top: 77px;
@@ -393,7 +405,6 @@ main {
     }
 
     .watch-navbar .navbar-nav {
-        display: flex;
         flex-direction: column;
         align-items: stretch;
 
@@ -407,9 +418,7 @@ main {
     }
 
     .watch-navbar .nav-link {
-        display: block;
         width: 100%;
-
         padding: 10px 8px;
         font-size: 15px;
         text-align: left;
@@ -426,7 +435,6 @@ main {
         width: 35px;
     }
 
-    /* WhatsApp */
     .whatsapp-float {
         right: 15px;
         bottom: 15px;
@@ -434,11 +442,6 @@ main {
         width: 54px;
         height: 54px;
         font-size: 29px;
-    }
-
-    /* Fixed header offset on homepage */
-    main {
-        padding-top: 80px;
     }
 
     #home,
@@ -455,7 +458,6 @@ main {
 
 /* =========================================
    EXTRA SMALL MOBILE
-   380px and below
 ========================================= */
 
 @media (max-width: 380px) {
