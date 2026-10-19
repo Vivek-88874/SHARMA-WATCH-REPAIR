@@ -1,25 +1,63 @@
 
-/* ================= GLOBAL ================= */
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9999;
 
-* {
-    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #25D366;
+    color: #ffffff;
+
+    font-size: 32px;
+    text-decoration: none;
+
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
 }
 
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+.whatsapp-float:hover {
+    color: #ffffff;
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 575.98px) {
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        right: 15px;
+        bottom: 15px;
+        font-size: 29px;
+    }
 }
 
 /* ================= HEADER ================= */
 
 .watch-header {
     height: 90px;
+    border-bottom: 4px solid #d49a2a;
 }
 
-
-
+/* Fixed header ke neeche section ko visible rakhna */
+#home,
+#about,
+#services,
+#gallery,
+#contact {
+    scroll-margin-top: 90px;
+}
 /* ================= BOOTSTRAP NAVBAR ================= */
 
 .watch-navbar {
@@ -86,7 +124,7 @@ body {
     padding: 10px 8px;
 
     color: #ffffff !important;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
 
     text-decoration: none;
@@ -177,8 +215,8 @@ body {
         right: 0;
         left: auto;
 
-        width: 220px;
-        padding: 10px 15px;
+        width: 251px;
+        padding: 10px 20px;
 
         background-color: #111827;
         border-radius: 0;
@@ -193,7 +231,7 @@ body {
 
         width: 100%;
         margin: 0;
-        gap: 10px;
+        gap: 20px;
     }
 
     .watch-navbar .nav-item {
@@ -205,7 +243,7 @@ body {
         width: 100%;
         padding: 8px 5px;
 
-        font-size: 16px;
+        font-size: 20px;
         text-align: left;
     }
 
@@ -254,12 +292,12 @@ body {
         right: 0;
         left: auto;
 
-        width: 180px;
+        width: 400px;
 
         padding: 10px 15px;
 
         background-color: #111827;
-        border-radius: 0;
+        border-radius: 0px;
 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     }
@@ -272,7 +310,7 @@ body {
 
         width: 100%;
         margin: 0;
-        gap: 10px;
+        gap: 15px;
     }
 
     .watch-navbar .nav-item {
@@ -291,7 +329,7 @@ body {
 
     /* Mobile underline */
     .watch-navbar .nav-link::before {
-        left: 5px;
+        left: 10px;
         bottom: 2px;
         transform: none;
     }

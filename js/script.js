@@ -190,8 +190,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         await loadComponent("home", "html/home.html");
 
-        // About ki file available ho to uncomment karo
-        // await loadComponent("about", "html/about.html");
+         await loadComponent("about", "html/wall-watches.html");
 
         await loadComponent("services", "html/services.html");
 
@@ -207,4 +206,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Bootstrap available hai ya nahi check karo
     checkBootstrap();
 
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const footerYear = document.getElementById("footer-year");
+
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
 });

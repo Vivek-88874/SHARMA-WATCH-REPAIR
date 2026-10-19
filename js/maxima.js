@@ -74,7 +74,7 @@ function showWatches(selectedBrand) {
     filteredWatches.forEach(watch => {
 
         watchContainer.innerHTML += `
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-6 col-lg-4">
                 <div class="watch-card">
 
                     <img

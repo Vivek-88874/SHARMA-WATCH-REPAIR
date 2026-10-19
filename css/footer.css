@@ -1,91 +1,500 @@
-/* Footer Main */
+
+/* =====================================
+   SHARMA WATCH REPAIR - FOOTER
+===================================== */
+
 .watch-footer {
-    background-color: #111827;
+    padding: 55px 0 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #111827, #202b3c);
     color: #ffffff;
-    padding: 50px 0 0;
+    border-top: 4px solid #d49a2a;
 }
 
-/* Footer Headings */
-.watch-footer h5 {
-    color: #d49a2a;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.footer-brand {
-    color: #ffffff;
-    font-size: 23px;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.footer-brand i {
-    color: #d49a2a;
-    margin-right: 8px;
-}
-
-.footer-description {
-    color: #d6e0eb;
-    line-height: 1.8;
-    max-width: 350px;
-}
-
-/* Quick Links */
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
+.watch-footer .container {
+    position: relative;
+    z-index: 1;
 }
 
 .watch-footer a {
-    color: #d6e0eb;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-.watch-footer a:hover {
+/* =====================================
+   BRAND
+===================================== */
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.footer-brand:hover,
+.footer-brand:hover span {
+    color: #e6b653;
+}
+
+.footer-logo {
+    display: block;
+    flex-shrink: 0;
+    width: 58px;
+    height: 58px;
+    padding: 4px;
+    object-fit: contain;
+    background: #ffffff;
+    border: 1px solid rgba(212, 154, 42, 0.7);
+    border-radius: 12px;
+}
+
+.footer-brand span {
+    color: #ffffff;
+    overflow-wrap: anywhere;
+    transition: color 0.25s ease;
+}
+
+.footer-description {
+    max-width: 350px;
+    margin-bottom: 22px;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =====================================
+   HEADINGS
+===================================== */
+
+.watch-footer h5 {
+    position: relative;
+    margin: 0 0 25px;
+    padding-bottom: 12px;
+    color: #e6b653;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.watch-footer h5::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 42px;
+    height: 3px;
+    border-radius: 3px;
+    background: #d49a2a;
+}
+
+/* =====================================
+   QUICK LINKS
+===================================== */
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 13px;
+}
+
+.footer-links a {
+    display: inline-block;
+    color: #cbd5e1;
+    font-size: 14px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-links a::before {
+    content: "›";
+    margin-right: 10px;
     color: #d49a2a;
+    font-size: 20px;
+    font-weight: 700;
 }
 
-/* Contact Details */
-.watch-footer p {
-    line-height: 1.7;
+.footer-links a:hover {
+    color: #e6b653;
+    transform: translateX(4px);
 }
 
-.watch-footer p i {
-    color: #d49a2a;
-    margin-right: 8px;
+/* =====================================
+   CONTACT
+===================================== */
+
+.footer-contact p {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-/* Copyright */
+.footer-contact p > i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 35px;
+    width: 35px;
+    height: 35px;
+    border-radius: 9px;
+    background: rgba(212, 154, 42, 0.12);
+    color: #e6b653;
+    font-size: 17px;
+}
+
+.footer-contact p a,
+.footer-contact p span {
+    min-width: 0;
+    color: #cbd5e1;
+    overflow-wrap: anywhere;
+}
+
+.footer-contact p a {
+    align-self: center;
+}
+
+.footer-contact p a:hover {
+    color: #e6b653;
+}
+
+/* =====================================
+   SOCIAL MEDIA
+===================================== */
+
+.footer-social-row {
+    margin-top: 12px;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(212, 154, 42, 0.45);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #e6b653;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: translateY(-4px);
+    border-color: #d49a2a;
+    background: #d49a2a;
+    color: #111827;
+}
+
+/* =====================================
+   COPYRIGHT
+===================================== */
+
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 38px;
+    padding: 20px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
     text-align: center;
-    padding: 20px 0 10px;
-    margin-top: 30px;
 }
 
 .footer-bottom p {
-    color: #d6e0eb;
-    font-size: 14px;
     margin: 0;
+    color: #aeb9c8;
+    font-size: 13px;
+    line-height: 1.8;
 }
 
-/* Mobile View */
+.footer-bottom strong,
+#footer-year {
+    color: #e6b653;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .watch-footer {
+        padding-top: 45px;
+    }
+
+    .footer-brand {
+        font-size: 19px;
+    }
+
+    .footer-logo {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
 @media (max-width: 767.98px) {
+
     .watch-footer {
         padding-top: 35px;
     }
 
-    .footer-brand {
-        font-size: 21px;
+    .watch-footer > .container {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 18px;
+        padding-left: 18px;
     }
 
-    .footer-bottom {
-        margin-top: 20px;
+    /* Main content: two columns */
+
+    .watch-footer .footer-main-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 12px;
+        row-gap: 28px;
+        margin: 0;
+    }
+
+    .watch-footer .footer-main-row > div {
+        width: auto;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Logo and description: full width, centered */
+
+    .watch-footer .footer-info {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .watch-footer .footer-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        margin: 0 auto 16px;
+        font-size: clamp(15px, 4.2vw, 20px);
+        text-align: center;
+    }
+
+    .watch-footer .footer-logo {
+        width: 50px;
+        height: 50px;
+        flex: 0 0 50px;
+        border-radius: 10px;
+    }
+
+    .watch-footer .footer-brand span {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .watch-footer .footer-description {
+        max-width: 450px;
+        margin: 0 auto;
+        font-size: 13px;
+        line-height: 1.85;
+        text-align: center;
+    }
+
+    /* Quick Links: left column, shifted slightly right */
+
+    .watch-footer .footer-quick-links {
+        grid-column: 1;
+        padding-left: 12px;
+        text-align: left;
+    }
+
+    .watch-footer h5 {
+        margin-bottom: 17px;
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .watch-footer h5::after {
+        left: 0;
+        width: 38px;
+    }
+
+    .watch-footer .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .watch-footer .footer-links li {
+        margin: 0;
+    }
+
+    .watch-footer .footer-links a {
+        font-size: 12px;
+        line-height: 1.7;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    .watch-footer .footer-links a::before {
+        margin-right: 5px;
+        font-size: 17px;
+    }
+
+    /* Contact: right column */
+
+    .watch-footer .footer-contact {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .watch-footer .footer-contact p {
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 14px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .watch-footer .footer-contact p > i {
+        flex-basis: 28px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .watch-footer .footer-contact p a {
+        align-self: center;
+    }
+
+    /* Social icons: centered below both columns */
+
+    .watch-footer .footer-social-row {
+        margin: 24px 0 0;
+    }
+
+    .watch-footer .footer-social-row > div {
+        padding: 0;
+    }
+
+    .watch-footer .footer-social {
+        justify-content: center;
+        gap: 12px;
+        margin-top: 0;
+    }
+
+    .watch-footer .footer-social a {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    /* Copyright */
+
+    .watch-footer .footer-bottom {
+        margin-top: 26px;
+        padding: 18px 5px;
+    }
+
+    .watch-footer .footer-bottom p {
+        font-size: 12px;
+        line-height: 1.9;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+
+    .watch-footer > .container {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .watch-footer .footer-main-row {
+        column-gap: 8px;
+        row-gap: 24px;
+    }
+
+    .watch-footer .footer-brand {
+        gap: 8px;
+        font-size: 15px;
+    }
+
+    .watch-footer .footer-logo {
+        width: 44px;
+        height: 44px;
+        flex-basis: 44px;
+    }
+
+    .watch-footer .footer-quick-links {
+        padding-left: 8px;
+    }
+
+    .watch-footer h5 {
+        font-size: 14px;
+    }
+
+    .watch-footer .footer-links a {
+        font-size: 11px;
+    }
+
+    .watch-footer .footer-links a::before {
+        margin-right: 4px;
+    }
+
+    .watch-footer .footer-contact p {
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .watch-footer .footer-contact p > i {
+        flex-basis: 25px;
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .watch-footer .footer-social {
+        gap: 9px;
+    }
+
+    .watch-footer .footer-social a {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .watch-footer .footer-bottom {
+        margin-top: 23px;
     }
 }

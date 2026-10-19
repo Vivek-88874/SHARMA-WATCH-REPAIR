@@ -1,0 +1,435 @@
+/* ==============================
+   WALL WATCH PAGE
+============================== */
+
+:root {
+    --primary: #17365d;
+    --primary-dark: #102a43;
+    --gold: #d49a2a;
+    --page-bg: #f5f7fa;
+    --border-color: #e2e7ee;
+    --text-color: #252b33;
+    --muted-color: #6c757d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page heading */
+
+.wall-watch-heading {
+    padding: 35px 24px;
+    background: var(--primary);
+    color: #fff;
+}
+
+.wall-watch-heading h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.wall-watch-heading p {
+    margin: 0;
+    color: #e0e8f1;
+    font-size: 15px;
+}
+
+/* Main layout */
+
+.wall-watch-container {
+    padding: 30px 24px;
+}
+
+.wall-watch-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+/* Sidebar */
+
+.filter-sidebar {
+    width: 100%;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.filter-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-heading h2 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.filter-heading button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.filter-group {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.filter-group h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 13px;
+    color: #414955;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filter-option:last-child {
+    margin-bottom: 0;
+}
+
+.filter-option input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+/* Product toolbar */
+
+.products-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.products-toolbar h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.products-toolbar p {
+    margin: 0;
+    color: var(--muted-color);
+    font-size: 13px;
+}
+
+.products-toolbar select {
+    max-width: 210px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text-color);
+    font-size: 13px;
+    outline-color: var(--primary);
+}
+
+/* Product grid */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Product card */
+
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(16, 42, 67, 0.10);
+}
+
+.product-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: #fff;
+}
+
+.product-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.product-info {
+    padding: 15px;
+    border-top: 1px solid #f0f2f5;
+}
+
+.product-brand {
+    margin-bottom: 6px;
+    color: var(--muted-color);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.product-name {
+    min-height: 40px;
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.product-price {
+    margin: 0;
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* No products */
+
+.no-products {
+    padding: 55px 20px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.no-products > i {
+    color: var(--muted-color);
+    font-size: 35px;
+}
+
+.no-products h3 {
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+.no-products p {
+    color: var(--muted-color);
+    font-size: 14px;
+}
+
+.no-products button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary);
+    color: #fff;
+}
+
+/* Mobile filter buttons: hidden on desktop */
+
+.mobile-filter-buttons {
+    display: none;
+}
+
+/* Mobile filter drawer */
+
+.mobile-filter-drawer {
+    height: 85vh !important;
+    border-radius: 18px 18px 0 0;
+}
+
+.mobile-filter-drawer .offcanvas-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-filter-drawer .offcanvas-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.drawer-actions {
+    display: flex;
+    gap: 12px;
+    padding: 20px 0 10px;
+}
+
+.drawer-actions button {
+    flex: 1;
+    min-height: 44px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+#drawerClearFilters {
+    border: 1px solid var(--primary);
+    background: #fff;
+    color: var(--primary);
+}
+
+.apply-filter-btn {
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 1100px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wall-watch-layout {
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .filter-sidebar {
+        padding: 18px;
+    }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 767px) {
+    .wall-watch-heading {
+        padding: 25px 16px;
+    }
+
+    .wall-watch-heading h1 {
+        font-size: 26px;
+    }
+
+    .wall-watch-container {
+        padding: 18px 12px;
+    }
+
+    .wall-watch-layout {
+        display: block;
+    }
+
+    .filter-sidebar {
+        display: none;
+    }
+
+    .mobile-filter-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    .mobile-filter-btn {
+        min-height: 44px;
+        padding: 10px 8px;
+        border: 1px solid var(--border-color);
+        border-radius: 7px;
+        background: #fff;
+        color: var(--primary);
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .mobile-filter-btn i {
+        margin-right: 4px;
+    }
+
+    .products-toolbar {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+    }
+
+    .products-toolbar h2 {
+        font-size: 21px;
+    }
+
+    .products-toolbar select {
+        max-width: 100%;
+        padding: 9px 8px;
+        font-size: 12px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product-image-wrap {
+        padding: 8px;
+    }
+
+    .product-info {
+        padding: 10px;
+    }
+
+    .product-name {
+        min-height: 38px;
+        font-size: 14px;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+}
+
+/* Small mobile */
+
+@media (max-width: 360px) {
+    .mobile-filter-btn {
+        font-size: 12px;
+    }
+
+    .product-grid {
+        gap: 8px;
+    }
+
+    .product-name {
+        font-size: 13px;
+    }
+
+    .product-info {
+        padding: 8px;
+    }
+}

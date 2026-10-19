@@ -54,10 +54,17 @@ const watches = [
         image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80"
     },
     {
-        brand: "Titan Smart Nebula",
-        name: "Titan Smart Nebula Watch",
+        brand: "Titan Smart",
+        name: "Titan Smart  Watch",
         price: 9999,
         image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        brand: "Nebula",
+        name: "Titan Nebula  Watch",
+        price: 9999,
+        image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80"
+     
     }
 ];
 
@@ -91,7 +98,7 @@ function showWatches(selectedBrand) {
     filteredWatches.forEach(function (watch) {
 
         watchContainer.innerHTML += `
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-6 col-lg-4">
                 <div class="watch-card">
                     <img src="${watch.image}"
                          alt="${watch.name}"
