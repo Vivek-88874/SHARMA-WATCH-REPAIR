@@ -24,11 +24,15 @@ const watches = [
         price: 3499,
         image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80"
     },
+
+
+
+
     {
         name: "Guess Classic Watch",
         brand: "Guess",
         price: 1999,
-        image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80"
+        image: "../gallery/timex/Guess1.jpeg"
     }
 ];
 
