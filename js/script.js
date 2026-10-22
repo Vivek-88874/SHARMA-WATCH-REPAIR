@@ -71,14 +71,14 @@ function setHeaderLinks(isHtmlPage) {
             : "html/wall-watches.html";
     }
 
-// Table Watches link
-const tableWatchLink = document.querySelector(".table-watches-link");
+    // Table Watches link
+    const tableWatchLink = document.querySelector(".table-watches-link");
 
-if (tableWatchLink) {
-    tableWatchLink.href = isHtmlPage
-        ? "table-watches.html"
-        : "html/table-watches.html";
-}
+    if (tableWatchLink) {
+        tableWatchLink.href = isHtmlPage
+            ? "table-watches.html"
+            : "html/table-watches.html";
+    }
 }
 
 
@@ -124,6 +124,14 @@ function setFooterLinks(isHtmlPage) {
         // Brand page se index ki HTML files tak sahi path
         if (isHtmlPage && href.startsWith("html/")) {
             link.href = "../" + href;
+        }
+        // Current page ke hisaab se footer logo set karo
+        const footerLogo = footer.querySelector(".footer-logo");
+
+        if (footerLogo) {
+            footerLogo.src = isHtmlPage
+                ? "../images/sharmawatchlogo.jpeg"
+                : "images/sharmawatchlogo.jpeg";
         }
     });
 }
@@ -232,11 +240,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Footer logo ka path
-const footerLogo = footer.querySelector("img.footer-logo");
 
-if (footerLogo) {
-    footerLogo.src = isHtmlPage
-        ? "../images/sharmawatchlogo.jpeg"
-        : "images/sharmawatchlogo.jpeg";
-}
