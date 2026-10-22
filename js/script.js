@@ -231,3 +231,12 @@ document.addEventListener("DOMContentLoaded", function () {
         footerYear.textContent = new Date().getFullYear();
     }
 });
+
+// Footer logo ka path
+const footerLogo = footer.querySelector("img.footer-logo");
+
+if (footerLogo) {
+    footerLogo.src = isHtmlPage
+        ? "../images/sharmawatchlogo.jpeg"
+        : "images/sharmawatchlogo.jpeg";
+}
