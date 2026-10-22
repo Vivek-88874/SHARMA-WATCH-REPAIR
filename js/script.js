@@ -60,7 +60,7 @@ function setHeaderLinks(isHtmlPage) {
         if (logoImage) {
             logoImage.src = isHtmlPage
                 ? "../images/sharmawatchlogo.jpeg"
-                : "../images/sharmawatchlogo.jpeg";
+                : "images/sharmawatchlogo.jpeg";
         }
     }
     const wallWatchLink = document.querySelector(".wall-watch-link");
