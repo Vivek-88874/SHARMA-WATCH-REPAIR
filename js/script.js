@@ -82,15 +82,23 @@ function setHeaderLinks(isHtmlPage) {
 }
 
 
-// ==========================================
-// 3. Footer ke links set karna
-// ==========================================
+
 function setFooterLinks(isHtmlPage) {
 
     const footer = document.getElementById("footer");
 
     if (!footer) return;
 
+    // 1. Footer logo ka path set karo
+    const footerLogo = footer.querySelector(".footer-logo");
+
+    if (footerLogo) {
+        footerLogo.src = isHtmlPage
+            ? "../images/sharmawatchlogo.jpeg"
+            : "images/sharmawatchlogo.jpeg";
+    }
+
+    // 2. Footer ke links set karo
     footer.querySelectorAll("a[href]").forEach(function (link) {
 
         const href = link.getAttribute("href");
@@ -109,7 +117,7 @@ function setFooterLinks(isHtmlPage) {
             return;
         }
 
-        // #contact jaise links ko sahi section par bhejo
+        // #home, #services jaise section links
         if (href.startsWith("#")) {
             link.href = isHtmlPage
                 ? "../index.html" + href
@@ -121,20 +129,20 @@ function setFooterLinks(isHtmlPage) {
         // Root-relative links ko mat badlo
         if (href.startsWith("/")) return;
 
-        // Brand page se index ki HTML files tak sahi path
+        // HTML folder ke pages se links ka path
         if (isHtmlPage && href.startsWith("html/")) {
             link.href = "../" + href;
         }
-        // Current page ke hisaab se footer logo set karo
-        const footerLogo = footer.querySelector(".footer-logo");
-
-        if (footerLogo) {
-            footerLogo.src = isHtmlPage
-                ? "../images/sharmawatchlogo.jpeg"
-                : "images/sharmawatchlogo.jpeg";
-        }
     });
+
+    // 3. Footer copyright year
+    const footerYear = footer.querySelector("#footer-year");
+
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
 }
+
 
 
 // ==========================================
@@ -230,14 +238,5 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 });
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const footerYear = document.getElementById("footer-year");
-
-    if (footerYear) {
-        footerYear.textContent = new Date().getFullYear();
-    }
-});
 
 
