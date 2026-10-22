@@ -1,0 +1,366 @@
+/* =========================================
+   WALL WATCHES PAGE - GLOBAL DESIGN
+========================================= */
+
+:root {
+    --table-primary: #17365d;
+    --table-primary-dark: #102a43;
+    --table-gold: #d49a2a;
+    --table-bg: #f5f7fa;
+    --table-white: #ffffff;
+    --table-border: #e2e7ee;
+    --table-text: #252b33;
+    --table-muted: #6c757d;
+    --table-shadow: 0 5px 20px rgba(16, 42, 67, 0.07);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.table-watch-heading {
+    margin: 0;
+    padding: 34px 28px;  
+    background-color: #17365d;
+    color: var(--white);
+    border-bottom: 4px solid #d49a2a;
+}
+
+.table-watch-heading .container-fluid {
+    padding: 0;
+    text-align: center;
+}
+
+.table-watch-heading h1 {
+    margin: 0 0 9px;
+    color: #f5bd45;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.table-watch-heading p {
+    margin: 0;
+    color: #e0e8f1;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Product Section */
+
+.table-watch-products {
+    padding: 40px 0 60px;
+    background: var(--table-bg);
+}
+
+/* Card */
+
+.table-watch-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--table-white);
+    border: 1px solid var(--table-border);
+    border-radius: 14px;
+    box-shadow: var(--table-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table-watch-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(16, 42, 67, 0.14);
+}
+
+/* Image Area */
+
+.watch-image-box {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffffff, #edf1f6);
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.watch-image-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.35s ease;
+}
+
+.table-watch-card:hover .watch-image-box img {
+    transform: scale(1.07);
+}
+
+/* Badge */
+
+.watch-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 5px 9px;
+    background: var(--table-gold);
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* Card Content */
+
+.watch-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 17px 15px;
+}
+
+.watch-brand-name {
+    display: block;
+    margin-bottom: 6px;
+    color: #b78119;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.watch-card-body h3 {
+    min-height: 42px;
+    margin: 0 0 8px;
+    color: var(--table-primary);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.watch-description {
+    min-height: 36px;
+    margin: 0 0 13px;
+    color: var(--table-muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Price */
+
+.watch-price-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+.watch-price {
+    color: var(--table-primary);
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.watch-old-price {
+    color: #929aa5;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+/* Enquire Button */
+
+.watch-details-btn {
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid var(--table-primary);
+    border-radius: 8px;
+    background: var(--table-primary);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.watch-details-btn:hover {
+    background: var(--table-gold);
+    border-color: var(--table-gold);
+    color: #ffffff;
+}
+
+.watch-details-btn i {
+    transition: transform 0.25s ease;
+}
+
+.watch-details-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* Keyboard Accessibility */
+
+.watch-details-btn:focus-visible {
+    outline: 3px solid rgba(212, 154, 42, 0.4);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET VIEW
+========================================= */
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .watch-image-box {
+        height: 190px;
+    }
+
+    .watch-card-body {
+        padding: 14px 12px;
+    }
+
+    .watch-card-body h3 {
+        font-size: 15px;
+    }
+}
+
+/* =========================================
+   MOBILE VIEW
+========================================= */
+
+@media (max-width: 575.98px) {
+    .table-watch-products {
+        padding: 25px 0 40px;
+    }
+
+    .table-watch-products .row {
+        --bs-gutter-x: 12px;
+        --bs-gutter-y: 16px;
+    }
+
+    .watch-image-box {
+        height: 155px;
+        padding: 10px;
+    }
+
+    .watch-card-body {
+        padding: 12px 10px;
+    }
+
+    .watch-brand-name {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .watch-card-body h3 {
+        min-height: 37px;
+        margin-bottom: 7px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .watch-description {
+        min-height: 34px;
+        margin-bottom: 10px;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .watch-price-row {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .watch-price {
+        font-size: 17px;
+    }
+
+    .watch-old-price {
+        font-size: 10px;
+    }
+
+    .watch-details-btn {
+        min-height: 38px;
+        gap: 5px;
+        padding: 8px 4px;
+        font-size: 11px;
+    }
+
+    .watch-badge {
+        top: 8px;
+        left: 8px;
+        padding: 4px 6px;
+        font-size: 9px;
+    }
+}
+
+/* Small Screen */
+
+@media (max-width: 360px) {
+    .watch-image-box {
+        height: 135px;
+        padding: 8px;
+    }
+
+    .watch-card-body {
+        padding: 10px 8px;
+    }
+
+    .watch-card-body h3 {
+        font-size: 12px;
+    }
+
+    .watch-price {
+        font-size: 15px;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .table-watch-card,
+    .watch-image-box img,
+    .watch-details-btn,
+    .watch-details-btn i {
+        transition: none;
+    }
+
+    .table-watch-card:hover {
+        transform: none;
+    }
+}

@@ -1,137 +1,450 @@
-/* Watch Gallery */
+/* =========================================
+   WATCH GALLERY
+========================================= */
+
 .watch-gallery {
     background: #f4f7fb;
     color: #17365d;
     border-top: 4px solid #d49a2a;
-
+    overflow: hidden;
 }
 
 .gallery-heading {
-    margin-bottom: 40px;
+    max-width: 750px;
+    margin: 0 auto 40px;
 }
 
 .gallery-subtitle {
-    color: #d49a2a;
-    font-weight: 700;
+    display: inline-block;
+    color: #b78119;
+    font-weight: 800;
     letter-spacing: 3px;
-    font-size: 25px;
+    font-size: 13px;
 }
 
 .gallery-heading h2 {
-    font-size: clamp(30px, 9vw, 45px);
-    font-weight: 800;
     margin: 10px 0;
     color: #17365d;
+    font-size: clamp(29px, 5vw, 44px);
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 .gallery-heading p {
-    color: #64748b;
-    margin-bottom: 0;
-}
-
-.category-heading h3 {
-    font-size: 25px;
-    font-weight: 700;
     margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
-.category-heading h3::after {
-    content: "";
-    display: block;
-    width: 45px;
-    height: 3px;
-    background: #d49a2a;
-    margin-top: 9px;
-}
-
-.view-all {
-    color: #17365d;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.view-all i {
-    color: #d49a2a;
-    margin-left: 5px;
-}
-
-.view-all:hover {
-    color: #d49a2a;
-}
-
+/* Brand Buttons */
 
 .category-buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
 }
 
 .category-btn {
-    display: inline-block;
-    padding: 10px 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    padding: 10px 24px;
+    border: 1px solid #17365d;
+    border-radius: 30px;
     background: #17365d;
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
-    border: 2px solid #17365d;
-    border-radius: 30px;
-    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.25s ease;
 }
 
 .category-btn:hover {
     background: #d49a2a;
-    color: #fff;
     border-color: #d49a2a;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
-/* Watch Price */
-.watch-price {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 700;
-    color: #17365d;
-    padding: 10px 5px;
-    background-color: #ffffff;
+/* Category Heading */
+
+.category-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
 }
 
-/* Watch Card */
-.watch-card {
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-}
-
-/* Watch Image */
-.watch-card img {
+.section-kicker {
     display: block;
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+    margin-bottom: 5px;
+    color: #b78119;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
 }
 
-.watch-card:hover img {
+.category-heading h3 {
+    margin: 0;
+    color: #17365d;
+    font-size: clamp(20px, 2.5vw, 27px);
+    font-weight: 800;
+}
+
+.view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+    color: #17365d;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.25s ease;
+}
+
+.view-all i {
+    color: #d49a2a;
+    transition: transform 0.25s ease;
+}
+
+.view-all:hover {
+    color: #b78119;
+}
+
+.view-all:hover i {
+    transform: translateX(4px);
+}
+
+/* =========================================
+   WATCH CARD
+========================================= */
+
+.watch-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e4e9f0;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 5px 18px rgba(23, 54, 93, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.watch-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(23, 54, 93, 0.14);
+}
+
+/* Image */
+
+.watch-image-wrap {
+    position: relative;
+    height: 230px;
+    padding: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #ffffff, #edf2f8);
+    border-bottom: 1px solid #edf0f5;
+}
+
+.watch-image-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.watch-card:hover .watch-image-wrap img {
     transform: scale(1.06);
 }
 
+/* Small Label */
 
-@media (max-width: 767px) {
+.watch-label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 5px 9px;
+    border-radius: 5px;
+    background: #d49a2a;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+/* Product Information */
+
+.watch-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 17px 15px 15px;
+}
+
+.watch-brand {
+    margin-bottom: 6px;
+    color: #b78119;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.watch-info h4 {
+    min-height: 40px;
+    margin: 0 0 7px;
+    color: #17365d;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.watch-desc {
+    min-height: 36px;
+    margin: 0 0 13px;
+    color: #748094;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Price */
+
+.watch-price-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+.watch-price {
+    padding: 0;
+    background: transparent;
+    color: #17365d;
+    font-size: 21px;
+    font-weight: 800;
+    text-align: left;
+}
+
+.watch-old-price {
+    color: #9aa2af;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+/* Explore Button */
+
+.watch-action {
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #17365d;
+    border-radius: 8px;
+    background: #17365d;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.watch-action i {
+    color: #f5bd45;
+    font-size: 15px;
+    transition: transform 0.25s ease;
+}
+
+.watch-action:hover {
+    background: #d49a2a;
+    border-color: #d49a2a;
+    color: #fff;
+}
+
+.watch-action:hover i {
+    color: #fff;
+    transform: translate(2px, -2px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991.98px) {
+    .watch-image-wrap {
+        height: 200px;
+    }
+
+    .watch-info {
+        padding: 14px 12px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767.98px) {
+    .watch-gallery {
+        padding-top: 35px !important;
+        padding-bottom: 35px !important;
+    }
+
+    .gallery-heading {
+        margin-bottom: 28px;
+    }
+
+    .gallery-subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .gallery-heading p {
+        font-size: 13px;
+    }
+
+    .category-buttons {
+        gap: 8px;
+        margin-bottom: 35px !important;
+    }
+
+    .category-btn {
+        min-width: 85px;
+        padding: 9px 16px;
+        font-size: 12px;
+    }
+
+    .category-heading {
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
     .category-heading h3 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
-     .watch-card img {
-        height: 160px;
-    }
-
-    .watch-price {
-        font-size: 17px;
-        padding: 8px 5px;
+    .section-kicker {
+        font-size: 9px;
+        letter-spacing: 1px;
     }
 
     .view-all {
-        font-size: 15px;
+        gap: 4px;
+        font-size: 11px;
+    }
+
+    .watch-image-wrap {
+        height: 165px;
+        padding: 8px;
+    }
+
+    .watch-image-wrap img {
+        border-radius: 6px;
+    }
+
+    .watch-label {
+        top: 8px;
+        left: 8px;
+        padding: 4px 6px;
+        font-size: 8px;
+    }
+
+    .watch-info {
+        padding: 11px 9px;
+    }
+
+    .watch-brand {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .watch-info h4 {
+        min-height: 35px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .watch-desc {
+        min-height: 32px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .watch-price-row {
+        gap: 6px;
+        margin-bottom: 11px;
+    }
+
+    .watch-price {
+        font-size: 16px;
+    }
+
+    .watch-old-price {
+        font-size: 10px;
+    }
+
+    .watch-action {
+        min-height: 36px;
+        gap: 4px;
+        padding: 8px 4px;
+        font-size: 10px;
+    }
+
+    .watch-action i {
+        font-size: 12px;
+    }
+}
+
+/* Very Small Screens */
+
+@media (max-width: 360px) {
+    .watch-image-wrap {
+        height: 140px;
+    }
+
+    .watch-info {
+        padding: 9px 7px;
+    }
+
+    .watch-info h4 {
+        font-size: 11px;
+    }
+
+    .watch-price {
+        font-size: 14px;
+    }
+
+    .watch-old-price {
+        font-size: 9px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .watch-card,
+    .watch-image-wrap img,
+    .watch-action,
+    .watch-action i,
+    .category-btn,
+    .view-all i {
+        transition: none;
     }
 }

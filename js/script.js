@@ -70,6 +70,15 @@ function setHeaderLinks(isHtmlPage) {
             ? "wall-watches.html"
             : "html/wall-watches.html";
     }
+
+// Table Watches link
+const tableWatchLink = document.querySelector(".table-watches-link");
+
+if (tableWatchLink) {
+    tableWatchLink.href = isHtmlPage
+        ? "table-watches.html"
+        : "html/table-watches.html";
+}
 }
 
 
